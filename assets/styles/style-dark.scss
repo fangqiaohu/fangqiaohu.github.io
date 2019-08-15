@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $version: "1.0.0";
 
 /* ------------------------------------------------
@@ -525,4 +526,533 @@ select,
 // Medium Zoom
 .medium-zoom-overlay {
   background: $dark-black-1!important;
+=======
+$version: "1.0.0";
+
+/* ------------------------------------------------
+ Author: ArtStyles (Art)
+ 
+ Template Name: vCard
+ version: #{$version}
+------------------------------------------------ */
+
+/* ------------------------------------------------
+
+ - General Styles
+   - Input Text
+   - Checkbox
+   - Select
+   - Dropdown
+   
+ - Typography
+ - Preloader
+ 
+ - Shared
+   - Box
+   - Avatars
+   - Social
+   - Badges
+   - Tooltips
+   
+ - Sidebar
+   - Contact list
+   
+ - Cases
+
+ - Testimonials
+   - Carousel pagination
+   
+ - Clients
+ - Timeline
+ - Progress
+ 
+ - Portfolio
+   - Filter
+    
+ - News
+ 
+ - Single post
+   - Comments
+   - Comment form
+   - Emoji
+   - niceScroll
+   - Social auth
+
+ - Other
+   - Bact to top
+   - Medium Zoom
+  
+------------------------------------------------ */
+
+@import '_color.scss';
+@import '_media.scss';
+
+
+/* -----------------------------------------------------------------
+    - General Styles
+----------------------------------------------------------------- */
+
+body {
+  background-color: #111D26;
+  color: $gray-200-color;
+}
+
+// Input Text
+%formStyle {
+  background-color: $dark-black-1;
+  border: 1px solid rgba($white-color,.08);
+  color: $white-color;
+}
+
+%formStyle-focus {
+  background-color: $dark-black-1;
+  border: 1px solid $tone-color;
+  color: $white-color;
+}
+
+.input {
+  @extend %formStyle;
+  
+  &:focus {
+    @extend %formStyle-focus;
+  }
+  
+  &--white {
+    background-color: $dark-black-2;
+	
+	&:focus {
+	  background-color: $dark-black-2;
+	}
+  }
+}
+
+.textarea {
+  @extend %formStyle;
+  
+  &:focus {
+    @extend %formStyle-focus;
+  }
+  
+  &--white {
+    background-color: $dark-black-2;
+	
+	&:focus {
+	  background-color: $dark-black-2;
+	}	
+  }
+}
+
+.form-group {
+  .font-icon {
+    color: $gray-300-color;
+  }
+}
+
+.form-control::-webkit-input-placeholder {
+  color: $gray-400-color;
+}
+
+.form-control::-moz-placeholder {
+  color: $gray-400-color;
+}
+
+.form-control:-ms-input-placeholder {
+  color: $gray-400-color;
+}
+
+.form-control::-ms-input-placeholder {
+  color: $gray-400-color;
+}
+
+.form-control::placeholder {
+  color: $gray-400-color;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: $dark-black-2!important;
+}
+
+// Checkbox
+.custom-control-input {
+  &:not(:disabled):active~.custom-control-label::before {
+    border-color: $gray-300-color;
+  }
+}
+
+.custom-control-label {
+  &::before {
+    border: 1px solid $gray-300-color;
+  }	
+}
+
+// Select
+select,
+.custom-select {
+  @extend %formStyle;
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23fff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.1rem center/10px 16px;
+  
+  &:focus {
+    @extend %formStyle-focus;
+  }
+  
+  option {
+    color: $white-color;
+  }
+}
+
+// Dropdown
+.dropdown {
+  &-menu {
+    background-color: $dark-black-2;
+    box-shadow: 0 8px 40px rgba($absolute-black, .25);
+    color: $gray-200-color;
+	
+	&::before {
+      border-bottom: .4rem solid $dark-black-2;
+	}
+  }
+  
+  &.dropup {
+    .dropdown-menu {
+      &::before {
+	    border-top: .4rem solid $dark-black-2;
+	  }
+	}  
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Typography
+----------------------------------------------------------------- */
+
+.title {
+  color: $white-color;
+}
+
+.block-quote {
+  &__author {
+	&::before {
+	  background-color: $gray-200-color;
+	}
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Preloader
+----------------------------------------------------------------- */
+
+.preloader {
+  background-color: #111D26;
+}
+
+/* -----------------------------------------------------------------
+    - Shared
+----------------------------------------------------------------- */
+
+// Box
+.box {
+  background-color: $dark-black-2;
+  box-shadow: 0px 24px 40px rgba($absolute-black, .25);
+  
+  &::before {
+	box-shadow: 0px 24px 40px rgba($absolute-black, .15);
+  }
+  
+  &__second {
+    background-color: $dark-black-2;
+    box-shadow: 0px 4px 8px rgba($absolute-black, .1);
+  }
+}
+
+.box-inner {
+  background-color: $dark-black-1;
+  
+  &::before,
+  &::after {
+	background-color: $dark-black-1;
+  }
+  
+  &--white {
+    background-color: $dark-black-2;
+	
+    &::before,
+    &::after {
+	  background-color: $dark-black-2;
+	}
+  }
+}
+
+// Avatars
+.avatar {
+  &--180 {
+	filter: drop-shadow(0 2px 8px rgba($absolute-black, .35))
+	        drop-shadow(0 8px 32px rgba($absolute-black, .35));
+  }  
+  
+  &--80 {
+	filter: drop-shadow(0 4px 4px rgba($absolute-black, .25))
+	        drop-shadow(0 8px 8px rgba($absolute-black, .4));
+  }   
+  
+  &--60 {
+	filter: drop-shadow(0 4px 4px rgba($absolute-black, .25))
+	        drop-shadow(0 8px 8px rgba($absolute-black, .25));
+  }   
+}
+
+// Social
+.social {
+  &__link {
+    color: $white-color;
+  }
+}
+
+// Badges
+.badge {
+  &--dark {
+    background-color: $dark-black-1;
+  }
+}
+
+// Tooltips
+.tooltip {
+  &-inner {
+    background-color: $dark-black-2;
+	box-shadow: 0px 16px 32px rgba($absolute-black, .25), 
+                0px 2px 16px rgba($absolute-black, .5);
+  }
+}
+
+.bs-tooltip-top .arrow::before, 
+.bs-tooltip-auto[x-placement^="top"] .arrow::before {
+  border-top-color: $dark-black-2;
+}
+
+.bs-tooltip-right .arrow::before, 
+.bs-tooltip-auto[x-placement^="right"] .arrow::before {
+  border-right-color: $dark-black-2;
+}
+
+.bs-tooltip-left .arrow::before, 
+.bs-tooltip-auto[x-placement^="left"] .arrow::before {
+  border-left-color: $dark-black-2;
+}
+
+.bs-tooltip-bottom .arrow::before, 
+.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+  border-bottom-color: $dark-black-2;
+}
+
+/* -----------------------------------------------------------------
+    - Sidebar
+----------------------------------------------------------------- */
+
+// Contact list
+.contacts-block {
+  &__item {
+	a {
+	  color: $white-color;
+	}
+  }
+}
+ 
+/* -----------------------------------------------------------------
+    - Cases
+----------------------------------------------------------------- */
+
+.case-item {
+  &__caption {
+    color: $gray-200-color;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Testimonials
+----------------------------------------------------------------- */
+
+.review-item {
+  background-color: $dark-black-1;
+
+  &__caption {
+    color: $gray-200-color;
+  }
+}
+
+.swiper-pagination-bullet {
+  background: rgba($white-color,.1);
+  
+  &-active {
+    background: $tone-color;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Timeline
+----------------------------------------------------------------- */
+
+.timeline {
+
+  &__item {
+    border-left: 1px solid rgba($white-color, .1);
+  }
+  
+  &__period {
+    color: $gray-400-color;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Progress
+----------------------------------------------------------------- */
+
+.progress {
+  background-color: $dark-black-1;
+}
+
+/* -----------------------------------------------------------------
+    - Portfolio
+----------------------------------------------------------------- */
+
+.gallery-grid {
+  &__category {
+	color: $gray-400-color;
+  }
+}
+
+// Filter
+@media only screen and (min-width: 769px) {
+  .filter {
+    &__link {
+	  color: $gray-400-color;
+    }
+  }
+}
+
+@media only screen and (max-width: $medium) {
+  .select {
+    background-color: $dark-black-1;
+
+    ul {
+	  background-color: $dark-black-1;
+	  box-shadow: 0 10px 60px rgba($absolute-black,.25);
+	   
+      li {
+        color: $white-color;
+	  
+	    a {
+		  color: $white-color;
+	    }
+      }
+    }
+  }
+}
+
+/* -----------------------------------------------------------------
+    - News
+----------------------------------------------------------------- */ 
+
+.news-item {
+  &__date {
+    background-color: $dark-black-2;
+	color: $gray-300-color;
+  }
+
+  p {
+    color: $gray-200-color;
+  }
+}
+
+
+/* -----------------------------------------------------------------
+    - Single post
+----------------------------------------------------------------- */ 
+
+.header-post {
+  &__date {
+    color: $gray-200-color;
+  }
+}
+
+.caption-post {
+  p {
+    color: $gray-200-color;
+  }
+}
+
+.footer-post {
+  &::before {
+	background-color: $white-color;
+  }
+  
+  &__share {
+    color: $white-color;
+  }
+}
+
+// Comments
+.comment-box {
+  &__inner {
+    background-color: $dark-black-2;
+  }
+  
+  &__body {
+    color: $gray-200-color;
+  }
+  
+  &__details {
+    color: $white-color;
+  }
+}
+
+// Emoji
+.emoji-wrap {
+  .emoji {
+    &:hover {
+	  box-shadow: 0 0 0px 2px rgba($gray-300-color, .3);
+	}	
+  }
+}
+
+// niceScroll
+.nicescroll-cursors {
+  background-color: rgba($white-color,.2)!important;
+  border-color: transparent!important;
+}
+
+// Social auth
+.social-auth {
+  .icon-facebook {
+    background-color: #3B5998;
+  }
+  
+  .icon-twitter {
+    background-color: #55ACEE;
+  }
+  
+  .icon-dribbble {
+    background-color: #F26798;
+  }
+  
+  .icon-behance {
+    background-color: #4176FA;
+  }  
+}
+
+/* -----------------------------------------------------------------
+    - Other
+----------------------------------------------------------------- */ 
+
+// Bact to top
+.back-to-top {
+  border-top: 1px solid $white-color;
+  border-left: 1px solid $white-color;
+}
+
+// Medium Zoom
+.medium-zoom-overlay {
+  background: $dark-black-1!important;
+>>>>>>> a27c30e80806895f679029d6179f97f4e84832fb
 }
